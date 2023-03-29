@@ -4,7 +4,7 @@ from pathlib import Path
 import toml
 
 
-if __name__ == '__main__':
+def main():
     config = toml.load('config.toml')
     working_dir = Path(config['working_dir']).expanduser().resolve()
     file_manager = FileManager(working_dir)
@@ -18,3 +18,7 @@ if __name__ == '__main__':
         except EOFError:
             print()
             exit()
+
+
+if __name__ == '__main__':
+    main()
